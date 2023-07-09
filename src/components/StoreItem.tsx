@@ -11,7 +11,7 @@ type StoreItemProps = {
 export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
     const quantity = 0;
     return (
-    <Card>
+    <Card className='h-100'>
         <Card.Img 
             variant='top' 
             src={imgUrl} 
@@ -23,8 +23,10 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
                 <span className='fs-2'>{name}</span>
                 <span className='ms-2 text-muted'>{formatCurrency(price)}</span>
             </Card.Title>
-            <div className='m-auto'>
-                <Button>+ Add to Cart</Button>
+            <div className='mt-auto'>
+                {quantity === 0 ? ( 
+                    <Button className='btn'>+ Add to Cart</Button> ) : null 
+                }
             </div>
         </Card.Body>
     </Card>
