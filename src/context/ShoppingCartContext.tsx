@@ -4,7 +4,7 @@ type ShoppingCartProviderProps = {
     children: ReactNode
 }
 
-type ShoppingCatContext = {
+type ShoppingCardContext = {
     getItemQuantity: (id: number) => number
     increaseItemQuantity: (id: number) => void
     decreaseItemQuantity: (id: number) => void
