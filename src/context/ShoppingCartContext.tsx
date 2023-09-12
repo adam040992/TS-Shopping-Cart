@@ -31,7 +31,7 @@ export function ShoppingCartProvider( { children } :ShoppingCartProviderProps ) 
 
     function increaseItemQuantity(id: number) {
         setCartItems(currItems => {
-            if (currItems.find(item => item.id === id) == null) {
+            if (currItems.find(item => item.id === id)?.quantity === 1) {
                 return [...currItems, { id, quantity: 1}]
             } else {
                 return currItems.map(item => {
